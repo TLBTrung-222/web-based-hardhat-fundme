@@ -49,7 +49,7 @@ async function fund() {
 }
 
 async function getBalance() {
-    if (window.ethereum !== "undefined") {
+    if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const balance = await provider.getBalance(contractAddress);
         console.log(ethers.utils.formatEther(balance));
@@ -57,7 +57,7 @@ async function getBalance() {
 }
 
 async function withdraw() {
-    if (window.ethereum !== "Undefined") {
+    if (typeof window.ethereum !== "Undefined") {
         //* Create an instance of FundMe contract
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
